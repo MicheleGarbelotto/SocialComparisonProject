@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 160" role="img" aria-label="Non-tested hypothesis psychological discomfort mediates domain and social comparison">
+  <defs>
+    <marker id="arrow-main" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#888888" />
+    </marker>
+    <style>
+      text {
+        fill: #111111;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .edge-label {
+        font-size: 15px;
+      }
+    </style>
+  </defs>
+
+  <rect x="20" y="51" width="240" height="58" rx="4" fill="#eef3fb" stroke="#4f6f9f" stroke-width="2" />
+  <text x="140" y="85" text-anchor="middle">Domain</text>
+
+  <line x1="272" y1="80" x2="368" y2="80" stroke="#888888" stroke-width="2" marker-end="url(#arrow-main)" />
+  <text class="edge-label" x="320" y="64" text-anchor="middle">Non-tested HP</text>
+
+  <rect x="380" y="51" width="240" height="58" rx="4" fill="#eef3fb" stroke="#4f6f9f" stroke-width="2" />
+  <text x="500" y="85" text-anchor="middle">Psychological discomfort</text>
+
+  <line x1="632" y1="80" x2="728" y2="80" stroke="#888888" stroke-width="2" marker-end="url(#arrow-main)" />
+  <text class="edge-label" x="680" y="64" text-anchor="middle">Non-tested HP</text>
+
+  <rect x="740" y="51" width="240" height="58" rx="4" fill="#edf7ed" stroke="#4f8a55" stroke-width="2" />
+  <text x="860" y="85" text-anchor="middle">Social comparison</text>
+</svg>

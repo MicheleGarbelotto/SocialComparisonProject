@@ -1,0 +1,276 @@
+---
+title: "A Social Comparison Analysis: Differentiating Losses and Gains? No"
+bibliography: references.bib
+csl: apa.csl
+format:
+  revealjs:
+    self-contained: true
+    slide-number: c/t
+    show-slide-number: all
+    progress: false
+    center: false
+    theme: simple
+    fontsize: 24.5px
+    margin: 0.20
+    width: 1000
+    height: 550
+    css:
+      - ChapProg/ChapProg.css
+      - SC_MainResults.css
+    include-after-body: ChapProg/ChapProg.js
+    scrollable: true
+    transition-speed: slow
+    transition: none
+    slide-level: 3
+execute:
+  echo: false
+---
+
+# Theoretical and Experimental Recap.
+
+### Prospect Theory's Domains {.prospect-theory-slide}
+
+::: {.screen-center}
+![](img/main_results/prospect_theory_domains.png){fig-alt="Prospect theory value function showing gains and losses around a reference point"}
+:::
+
+### Experimental Task
+
+::: {.screen-center}
+[Experimental Task](https://michelegarbelotto.github.io/CV/Experiment.html)
+:::
+
+# Hypotheses
+
+### Domain Hypothesis {.hypotheses-slide}
+
+::: {.hypothesis-stack}
+
+::: {.fragment .fade-in .hyp-mini}
+![](img/main_results/hypothesis_h1.svg){.hyp-img fig-alt="H1"}
+
+H1: loss domain $\rightarrow$ *less* social comparison
+:::
+
+::: {.fragment .fade-in .hyp-mini}
+Why?
+:::
+
+:::
+
+### Domain Mediated Hypotheses {.hypotheses-slide}
+
+::: {.hypothesis-stack}
+
+::: {.fragment .fade-in .hyp-mini}
+![](img/main_results/hypothesis_non_tested_hp.svg){.hyp-img fig-alt="Non-tested hypothesis: psychological discomfort mediates the relation between domain and social comparison"}
+
+Non-tested HP: loss domain $\rightarrow$ *more* psychological discomfort $\rightarrow$ *less* social comparison
+:::
+
+
+::: {.fragment .fade-in .hyp-mini}
+![](img/main_results/hypothesis_identification_h2.svg){.hyp-img fig-alt="H2: identification mediates the relation between domain and social comparison"}
+
+H2: loss domain $\rightarrow$ *more* identification $\rightarrow$ *less* social comparison
+:::
+
+:::
+
+### Direction Hypothesis {.hypotheses-slide}
+
+::: {.hypothesis-stack}
+
+::: {.fragment .fade-in .hyp-mini}
+![](img/main_results/hypothesis_direction_h3.svg){.hyp-img fig-alt="H3"}
+
+H3: *higher* probability of upward comparison $\rightarrow$ *more* social comparison
+:::
+
+:::
+
+# Results
+
+## Explanatory Results
+
+### Mixed-Model Hypothesis Tests {.plot-only-slide}
+
+::: {.figure-slide}
+![](img/main_results/main_hypothesis_coefficient_plot.png){fig-alt="Coefficient plot of fixed-effect estimates and Wald 95 percent confidence intervals for the main hypotheses. Panels separate the conditional count, zero-sampling, and ordinal identification model components."}
+:::
+
+### H3 {.h3-summary-slide}
+
+:::: {.h3-summary-layout}
+
+::: {.h3-summary-plot}
+![](img/main_results/hurdle_outcome_type_main_effect_domain_model.png)
+:::
+
+::: {.h3-summary-results}
+#### Without Outcome Difference
+
+`b = -0.562`, `SE = 0.209`, `p = .007`
+
+#### With Outcome Difference
+
+`b = -0.346`, `SE = 0.367`, `p = .346`
+:::
+
+::::
+
+## Exploratory Results
+
+### Model 1 {.interval-model-slide .exploratory-model-slide}
+
+:::: {.exploratory-model-layout}
+
+::: {.exploratory-plot-panel}
+::: {.exploratory-plot}
+![](img/main_results/hurdle_marginal_probability_any_sampling_by_interval.png){fig-alt="Marginal probability of any sampling by outcome difference"}
+:::
+
+::: {.interval-contrast-summary}
+Outcome difference 40-20: `b = 0.513`, `SE = 0.239`, `p = .032`
+Outcome difference 40-10: `b = 0.585`, `SE = 0.240`, `p = .015`
+:::
+:::
+
+::: {.model-variables}
+<div class="model-variables-title">Model Variables</div>
+
+**Dependent variable**
+
+Sample count
+
+**Displayed outcome**
+
+Probability of any sampling
+
+**Independent variables**
+
+- Outcome difference
+- Outcome type
+- Domain
+:::
+
+::::
+
+### Model 2: Domain {.exploratory-model-slide}
+
+:::: {.exploratory-model-layout}
+
+::: {.exploratory-plot-panel}
+::: {.exploratory-plot}
+![](img/main_results/happiness_domain_earnings_sampling_adjusted_domain.png){fig-alt="Adjusted predicted happiness by domain from the domain, earnings, and sampling model"}
+:::
+
+::: {.result-caption}
+Domain: `b = -16.46`, `SE = 1.88`, `p < .001`
+:::
+:::
+
+::: {.model-variables}
+<div class="model-variables-title">Model Variables</div>
+
+**Dependent variable**
+
+Happiness
+
+**Independent variables**
+
+- Domain
+- Block total earnings
+- Mean sample count
+:::
+
+::::
+
+### Model 2: Block Total Earnings {.exploratory-model-slide}
+
+:::: {.exploratory-model-layout}
+
+::: {.exploratory-plot-panel}
+::: {.exploratory-plot}
+![](img/main_results/happiness_domain_earnings_sampling_adjusted_block_total_earnings.png){fig-alt="Adjusted predicted happiness by block total earnings from the domain, earnings, and sampling model"}
+:::
+
+::: {.result-caption}
+Block total earnings: `b = 0.28`, `SE = 0.05`, `p < .001`
+:::
+:::
+
+::: {.model-variables}
+<div class="model-variables-title">Model Variables</div>
+
+**Dependent variable**
+
+Happiness
+
+**Independent variables**
+
+- Domain
+- Block total earnings
+- Mean sample count
+:::
+
+::::
+
+### Model 2: Mean Sample Count {.exploratory-model-slide}
+
+:::: {.exploratory-model-layout}
+
+::: {.exploratory-plot-panel}
+::: {.exploratory-plot}
+![](img/main_results/happiness_domain_earnings_sampling_adjusted_mean_sample_count.png){fig-alt="Adjusted predicted happiness by mean sample count from the domain, earnings, and sampling model"}
+:::
+
+::: {.result-caption}
+Mean sample count: `b = 1.41`, `SE = 0.53`, `p = .008`
+:::
+:::
+
+::: {.model-variables}
+<div class="model-variables-title">Model Variables</div>
+
+**Dependent variable**
+
+Happiness
+
+**Independent variables**
+
+- Domain
+- Block total earnings
+- Mean sample count
+:::
+
+::::
+
+### Model 3 {.comparison-proportions-slide .exploratory-model-slide}
+
+:::: {.exploratory-model-layout}
+
+::: {.exploratory-plot-panel}
+::: {.exploratory-plot}
+![](img/main_results/happiness_social_comparison_adjusted_comparison_proportions.png){fig-alt="Adjusted predicted happiness by social comparison proportions"}
+:::
+:::
+
+::: {.model-variables}
+<div class="model-variables-title">Model Variables</div>
+
+**Dependent variable**
+
+Happiness
+
+**Independent variables**
+
+- Domain
+- Block total earnings
+- Proportion of comparisons worse than self
+- Proportion of comparisons better than self
+:::
+
+::::
+
+### Thanks

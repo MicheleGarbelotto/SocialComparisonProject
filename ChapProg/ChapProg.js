@@ -50,14 +50,22 @@
   }
 
   function getCurrentSlideEl() {
-    if (window.Reveal && Reveal.getCurrentSlide) return Reveal.getCurrentSlide();
-    return document.querySelector('.reveal .slides section.present');
+    const api = revealApi();
+    if (api && api.getCurrentSlide) return api.getCurrentSlide();
+
+    const present = Array.from(document.querySelectorAll('.reveal .slides section.present'));
+    return present.length ? present[present.length - 1] : null;
   }
 
-  function currentIndices() {
-    if (!window.Reveal || !Reveal.getIndices) return { h: 0, v: 0 };
-    const idx = Reveal.getIndices();
-    return { h: idx.h || 0, v: idx.v || 0 };
+  function revealApi() {
+    if (window.Reveal) return window.Reveal;
+    if (typeof Reveal !== 'undefined') return Reveal;
+    return null;
+  }
+
+  function getActiveHorizontalSection(currentSlide) {
+    if (!currentSlide) return null;
+    return getAllHorizontalSections().find(sec => sec === currentSlide || sec.contains(currentSlide)) || null;
   }
 
   function render() {
@@ -65,18 +73,20 @@
     if (!container) return;
 
     const chapters = getHorizontalChapters();
-    const { h } = currentIndices();
-
     const currentSlide = getCurrentSlideEl();
-    const inTitle = (h === 0);
+    const activeHorizontalSection = getActiveHorizontalSection(currentSlide);
+    const allHorizontalSections = getAllHorizontalSections();
+    const inTitle = activeHorizontalSection === allHorizontalSections[0];
     const inReferences = isReferences(currentSlide);
 
     // Se sei su References (anche verticale), nessun capitolo attivo (come title)
-    const chapterIndex = (!inTitle && !inReferences) ? (h - 1) : -1;
+    const chapterIndex = (!inTitle && !inReferences && activeHorizontalSection)
+      ? chapters.findIndex(sec => sec === activeHorizontalSection)
+      : -1;
 
     // Per accendere il dot giusto: usa l'elemento slide corrente, non l'indice v,
     // perché References viene filtrata e gli indici numerici non coincidono più.
-    const activeChapterSection = (!inTitle && !inReferences && chapterIndex >= 0) ? chapters[chapterIndex] : null;
+    const activeChapterSection = chapterIndex >= 0 ? chapters[chapterIndex] : null;
     const activeFilteredVerticals = activeChapterSection ? verticalSlidesInChapter(activeChapterSection) : [];
     const activeVIndex = (activeChapterSection && currentSlide)
       ? activeFilteredVerticals.findIndex(sec => sec === currentSlide)
@@ -113,9 +123,26 @@
   }
 
   function bindReveal(){
-    if (!(window.Reveal && Reveal.on)) return false;
-    Reveal.on('ready', update);
-    Reveal.on('slidechanged', update);
+    const api = revealApi();
+    if (!(api && api.on)) return false;
+    api.on('ready', update);
+    api.on('slidechanged', update);
+    update();
+    return true;
+  }
+
+  function bindDomFallback(){
+    window.addEventListener('hashchange', update);
+
+    const slides = document.querySelector('.reveal .slides');
+    if (!slides) return false;
+
+    const observer = new MutationObserver(update);
+    observer.observe(slides, {
+      attributes: true,
+      attributeFilter: ['class'],
+      subtree: true
+    });
     update();
     return true;
   }
@@ -123,11 +150,12 @@
   document.addEventListener('DOMContentLoaded', function(){
     ensureContainer();
     if (bindReveal()) return;
+    if (bindDomFallback()) return;
 
     let tries = 0;
     const t = setInterval(function(){
       tries++;
-      if (bindReveal() || tries > 60) clearInterval(t);
+      if (bindReveal() || bindDomFallback() || tries > 60) clearInterval(t);
     }, 100);
   });
 

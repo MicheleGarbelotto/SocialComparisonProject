@@ -1,0 +1,316 @@
+.reveal h2,
+.reveal h3 {
+  font-size: 1.25em;
+}
+
+.reveal .slide-number {
+  position: fixed !important;
+  top: 18px !important;
+  right: 28px !important;
+  bottom: auto !important;
+  left: auto !important;
+  font-size: 14px;
+  background: transparent;
+}
+
+.model-meta {
+  font-size: 0.62em;
+  margin: 0.15rem 0 0.45rem 0;
+  color: #444;
+}
+
+.model-meta code {
+  font-size: 0.92em;
+}
+
+.model-formula {
+  font-size: 0.46em;
+  line-height: 1.2;
+  margin: -0.25rem 0 0.4rem 0;
+  color: #333;
+  overflow-wrap: anywhere;
+}
+
+.model-formula code {
+  white-space: normal;
+}
+
+.figure-slide img {
+  display: block;
+  max-width: 100%;
+  max-height: 300px;
+  margin: 0 auto 0.45rem auto;
+  object-fit: contain;
+}
+
+.plot-only-slide .figure-slide img {
+  width: auto;
+  height: 500px;
+  max-width: none;
+  max-height: 500px;
+  margin: 0 auto;
+}
+
+.plot-only-slide h3 {
+  font-size: 1.05em;
+  margin: -0.15rem 0 0.05rem 0;
+}
+
+.plot-only-slide .figure-slide,
+.plot-only-slide .figure-slide p {
+  margin: 0;
+}
+
+.h3-summary-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.8fr);
+  gap: 1rem;
+  align-items: center;
+  max-width: 1050px;
+  min-height: 430px;
+  margin: 0 auto;
+}
+
+.h3-summary-plot img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.h3-summary-results {
+  font-size: 0.58em;
+  line-height: 1.22;
+  color: #222;
+}
+
+.h3-summary-results h4 {
+  font-size: 0.95em;
+  margin: 0.25rem 0 0.3rem 0;
+}
+
+.h3-summary-results p {
+  margin: 0.18rem 0 0.7rem 0;
+}
+
+.result-caption {
+  font-size: 0.57em;
+  line-height: 1.25;
+  text-align: center;
+  margin: 0.2rem auto 0 auto;
+  max-width: 1050px;
+}
+
+.result-caption p {
+  margin: 0.15rem 0;
+}
+
+.exploratory-model-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(235px, 0.75fr);
+  gap: 0.85rem;
+  align-items: center;
+  max-width: 1050px;
+  min-height: 430px;
+  margin: 0 auto;
+}
+
+.exploratory-plot-panel,
+.exploratory-plot-panel p,
+.exploratory-plot p {
+  margin: 0;
+}
+
+.exploratory-plot img {
+  display: block;
+  width: 100%;
+  max-height: 430px;
+  object-fit: contain;
+  margin: 0 auto 0.2rem auto;
+}
+
+.exploratory-plot-panel .result-caption,
+.exploratory-plot-panel .interval-contrast-summary {
+  text-align: left;
+  max-width: 100%;
+  margin: 0.15rem 0 0 0;
+}
+
+.model-variables {
+  align-self: center;
+  border-left: 1px solid #d6d6d6;
+  color: #222;
+  font-size: 0.54em;
+  line-height: 1.24;
+  padding-left: 0.75rem;
+}
+
+.model-variables-title {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0 0 0.45rem 0;
+}
+
+.model-variables p {
+  margin: 0.08rem 0 0.32rem 0;
+}
+
+.model-variables strong {
+  display: block;
+  color: #555;
+  font-size: 0.78em;
+  margin-top: 0.2rem;
+}
+
+.model-variables ul {
+  margin: 0.08rem 0 0.42rem 1rem;
+  padding: 0;
+}
+
+.model-variables li {
+  margin: 0.07rem 0;
+}
+
+.interval-model-slide .figure-slide img {
+  max-height: 350px;
+  margin-bottom: 0.25rem;
+}
+
+.interval-contrast-summary {
+  font-size: 0.62em;
+  line-height: 1.35;
+  text-align: center;
+  margin: 0.15rem auto 0 auto;
+  max-width: 900px;
+}
+
+.interval-contrast-summary p {
+  margin: 0;
+}
+
+.comparison-proportions-slide .figure-slide img {
+  max-height: 430px;
+  margin-bottom: 0.25rem;
+}
+
+.comparison-proportions-slide .model-schematic {
+  font-size: 0.62em;
+  line-height: 1.28;
+  text-align: center;
+  margin: 0.15rem auto 0 auto;
+  max-width: 920px;
+}
+
+.comparison-proportions-slide .model-schematic p {
+  margin: 0;
+}
+
+.result-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.66em;
+  margin-top: 0.65rem;
+}
+
+.result-table th,
+.result-table td {
+  padding: 0.35rem 0.45rem;
+  border-bottom: 1px solid #d8d8d8;
+  vertical-align: top;
+}
+
+.result-table th {
+  font-weight: 700;
+  text-align: left;
+}
+
+.compact-results table {
+  font-size: 0.54em;
+  margin-top: 0.25rem;
+}
+
+.compact-results th,
+.compact-results td {
+  padding: 0.22rem 0.3rem;
+}
+
+.model-block {
+  margin-top: 0.55rem;
+}
+
+.model-block h4 {
+  font-size: 0.72em;
+  margin: 0 0 0.2rem 0;
+}
+
+.fragment-note {
+  font-size: 0.58em;
+  line-height: 1.2;
+  margin: 0.25rem 0 0 0;
+}
+
+.text-slide {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.screen-center {
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.screen-center p {
+  margin: 0;
+}
+
+.screen-center img {
+  display: block;
+  max-width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+}
+
+.prospect-theory-slide .screen-center img {
+  max-width: min(92%, 420px);
+  max-height: 420px;
+}
+
+.screen-center a {
+  font-size: 1.05em;
+}
+
+.note-line {
+  font-size: 0.65em;
+  color: #555;
+  margin-top: 0.8rem;
+}
+
+.hypothesis-stack {
+  min-height: 430px;
+  margin-top: 0.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.hyp-mini {
+  width: 88%;
+  margin: 0;
+}
+
+.hyp-img {
+  display: block;
+  width: 100%;
+  max-height: 132px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.hyp-img-tall {
+  max-height: 210px;
+}

@@ -19,3 +19,5 @@ format:
 - [Losses and gains in social comparison](SC_LossAndGainHp.html)
 
 - [3 slides: hp, experimental design and expected results](SC_3slides.html)
+
+- [Main results](SC_MainResults.html)
