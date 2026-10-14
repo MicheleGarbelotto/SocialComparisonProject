@@ -21,3 +21,5 @@ format:
 - [3 slides: hp, experimental design and expected results](SC_3slides.html)
 
 - [Main results](SC_MainResults.html)
+
+- [Master's thesis defense presentation](defense-presentation/Michele_Garbelotto_Discussione.pdf) ([PowerPoint download](defense-presentation/Michele_Garbelotto_Discussione.pptx))
